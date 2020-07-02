@@ -1,5 +1,9 @@
 清楚一个概念：
    我们自己本地需要搭建一个hexo环境，方便写作，github仓库是我们发布后需要同步博客的地方。
+   
+参考链接:
+https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html
+https://www.jianshu.com/p/7667d8e8f91c
 
 1. 安装一个npm环境  - 网上有教程（所谓npm是一个包管理器，方便的从仓库下载需要的包）
 2. 执行npm命令安装hexo博客系统脚手架 - 所谓脚手架就是方便快速生成工程和相关页面的框架
