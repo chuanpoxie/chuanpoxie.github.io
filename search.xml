@@ -4,6 +4,43 @@
   
     
     <entry>
+      <title>Java面经</title>
+      <link href="/2020/07/05/%E5%85%AC%E5%8F%B8%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/"/>
+      <url>/2020/07/05/%E5%85%AC%E5%8F%B8%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<h1 id="5-21、先从科技有限公司"><a href="#5-21、先从科技有限公司" class="headerlink" title="5.21、先从科技有限公司"></a>5.21、先从科技有限公司</h1><p>面试：</p><ol><li>项目讲解，亮点部分</li><li>spring的初始化流程（IOC初始化）</li><li>springMVC工作流程</li><li>mybatis缓存</li><li>SQL优化</li></ol><h1 id="5-21、海纳丰科技有限公司"><a href="#5-21、海纳丰科技有限公司" class="headerlink" title="5.21、海纳丰科技有限公司"></a>5.21、海纳丰科技有限公司</h1><p>面试：</p><ol><li>java面向对象</li><li>多线程创建方式</li><li>spring和springMVC区别</li><li>springMVC中注解和用处</li><li>springMVC工作流程</li><li>集合</li><li>SQL优化</li><li>注入依赖方式</li></ol><h1 id="5-22、超然祥润有限公司"><a href="#5-22、超然祥润有限公司" class="headerlink" title="5.22、超然祥润有限公司"></a>5.22、超然祥润有限公司</h1><p>笔试部分：</p><ol><li>能力测试！（IQ）</li><li>前端JavaScript代码编写</li><li>ajax的介绍，原理</li></ol><p>面试部分</p><ol><li>项目讲解</li><li>多线程相关知识，<font color = red>项目中那些地方用到了多线程</font></li><li><font color = red>事务相关知识，以及自己项目中那些地方用到了事务</font></li><li>spring 的IOC和AOP相关知识</li><li>springMVC工作流程</li><li>集合，<font color = red>map中有哪些方法</font></li><li>SQL优化</li></ol><h1 id="6-19、西辰软件"><a href="#6-19、西辰软件" class="headerlink" title="6.19、西辰软件"></a>6.19、西辰软件</h1><p>笔试部分：</p><ol><li>JDBC连接</li><li>SQL</li></ol><h1 id="6-23、海乂知信息科技有限公司"><a href="#6-23、海乂知信息科技有限公司" class="headerlink" title="6.23、海乂知信息科技有限公司"></a>6.23、海乂知信息科技有限公司</h1><p>技术面试：</p><ul><li>error和exception的父类</li><li>SQL优化</li><li>JDBC连接过程</li><li>索引介绍</li><li>List中有几条数据，要求在进行迭代的时候删除一条数据，怎么删除</li><li>SQL数据访问量过大怎么办</li><li>Linux命令</li><li>多线程，线程池</li><li>对算法的理解</li></ul><p>负责人面试：</p><ul><li>你在实习中遇到的困难？</li><li>你解决问题要多久？</li><li>你认为你的优势是什么？</li><li>你认为你能给公司带来什么？</li><li>你的职业规划？</li><li>近期打算？</li><li>能问我三个问题？</li></ul><h1 id="6-30、四川创博云软信息技术有限公司"><a href="#6-30、四川创博云软信息技术有限公司" class="headerlink" title="6.30、四川创博云软信息技术有限公司"></a>6.30、四川创博云软信息技术有限公司</h1><ul><li>数据库中列和行之间的转换？</li><li>error和exception的区别？</li><li>SpringBoot常用命令？</li><li>JDK，JRE，JVM？</li></ul><h1 id="6-30、鸿达安视"><a href="#6-30、鸿达安视" class="headerlink" title="6.30、鸿达安视"></a>6.30、鸿达安视</h1><p><strong>面试部分：</strong></p><ul><li>java面向对象的特征，封装、继承、多态</li><li>final、finally、finalize区别</li><li>事务回滚发生错误怎么办？</li><li>垃圾回收机制回收对象以及垃圾回收机制什么时候回收？</li><li>分库、分表</li><li>SpringBoot比起SSM的优势？</li><li>SpringBean的生命周期？</li><li>ArrayList，Vocter,LinkedList的区别？</li><li>链表的添加和删除元素的底层实现？</li><li>数，队列？</li><li>hashmap中转红黑树？</li><li>mybatis中一级缓存和二级缓存？</li><li>Linux中的常用命令，权限命令，权限分级？</li><li>数据库的引擎分类</li></ul><h1 id="7-2、汉图"><a href="#7-2、汉图" class="headerlink" title="7.2、汉图"></a>7.2、汉图</h1><p><strong>笔试：</strong></p><ul><li><strong>接口中可以定义的方法</strong>（选择题？除了abstract方法之外，还有default(缺省)和static）</li><li>多线程中的锁（volatile和synchronized）</li><li>单例模式</li><li>error和exception，CheckedException和RuntimeException区别</li><li>类的实例化顺序</li><li>spring的优点</li><li>spring的作用域</li><li>#{}和${}区别</li><li><strong>Sql语句（没写出来）</strong></li></ul><p><strong>面试：</strong></p><ul><li><strong>@Controller和@RestController的区别</strong></li><li>JSP九大内置对象</li><li>servlet生命周期</li><li>乐观锁和悲观锁</li><li>ACID</li><li>Linux常用命令，<strong>查看内存等</strong></li><li>maven常用命令（clean，test,compile,package,install,deploy）</li><li>maven打包等</li><li><strong>springBoot运行jar</strong></li><li>项目中遇到的问题？（这个问题回答得不太好）</li></ul><p>还有几个问题忘记了</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java面试 </category>
+          
+          <category> 面经 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+            <tag> Java面试 </tag>
+            
+            <tag> 先从科技有限公司 </tag>
+            
+            <tag> 海纳丰科技有限公司 </tag>
+            
+            <tag> 超然祥润有限公司 </tag>
+            
+            <tag> 海乂知信息科技有限公司 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Test</title>
       <link href="/2020/07/04/Test/"/>
       <url>/2020/07/04/Test/</url>
