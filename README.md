@@ -47,4 +47,18 @@ Syntax highlighted code block
 
 7. 遇到问题，作者之间可以相互沟通！其他命令不会的建议提前做了解....
 
-8. 额外： 遇到搜索无效这些，记得本地安装下插件，网上有相关搜索，高亮的一些配置...
+
+a. 提示：如果要自定义页面，可以在hexo new page "Tools"之后，生成了D:\MEME\穿破鞋\hexo\source\tools文件夹，这个里面可以直接放index.html文件(建议直接拷贝public生成的某个菜单首页的index.html,然后改样式，这样融合感更好)
+此时添加这个文件夹到过滤渲染配置D:\MEME\穿破鞋\hexo\_config.yml：
+skip_render:
+  - "tools/**"
+--然后配置菜单到主题的_config.yml下面(其他菜单名称添加暂时未知):
+menu:
+ ...
+ 工具:
+    url: /tools
+    icon:
+ ...
+运行则会走我们自己的界面 http://chuanpoxie.com/tools/
+
+b. 额外： 遇到搜索无效这些，记得本地安装下插件，网上有相关搜索，高亮的一些配置...
