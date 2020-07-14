@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -333,20 +333,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Android/">
-                                <span class="chip bg-color">Android</span>
-                            </a>
-                        
-                            <a href="/tags/2020/">
-                                <span class="chip bg-color">2020</span>
-                            </a>
-                        
                             <a href="/tags/ConstraintLayout/">
                                 <span class="chip bg-color">ConstraintLayout</span>
                             </a>
                         
+                            <a href="/tags/Android/">
+                                <span class="chip bg-color">Android</span>
+                            </a>
+                        
                             <a href="/tags/%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80/">
                                 <span class="chip bg-color">约束布局</span>
+                            </a>
+                        
+                            <a href="/tags/2020/">
+                                <span class="chip bg-color">2020</span>
                             </a>
                         
                     </div>
@@ -406,7 +406,25 @@
 <p>问题：</p>
 <p><a href="https://zhuanlan.zhihu.com/p/102713335" target="_blank" rel="noopener">MonkeyLei：Android-约束布局-ConstraintLayout goneMarginTop还不错</a></p>
 <p>其他的有问题继续补充…另外如果遇到一些复杂布局出现问题，可以回过头去琢磨一些属性，相信应该都可以解决哒！目前已经三个项目都是约束，对尽量做到适配，很有帮助，很nice的。。。特殊情况可能需要用的一些不常用的属性，but很有用哟</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -469,20 +487,20 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Android/">
-                                    <span class="chip bg-color">Android</span>
-                                </a>
-                            
-                                <a href="/tags/2020/">
-                                    <span class="chip bg-color">2020</span>
-                                </a>
-                            
                                 <a href="/tags/ConstraintLayout/">
                                     <span class="chip bg-color">ConstraintLayout</span>
                                 </a>
                             
+                                <a href="/tags/Android/">
+                                    <span class="chip bg-color">Android</span>
+                                </a>
+                            
                                 <a href="/tags/%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80/">
                                     <span class="chip bg-color">约束布局</span>
+                                </a>
+                            
+                                <a href="/tags/2020/">
+                                    <span class="chip bg-color">2020</span>
                                 </a>
                             
                         </div>
@@ -654,6 +672,59 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2020/07/05/%E9%9D%A2%E8%AF%95%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="面试简单算法.md">
+                        
+                        <span class="card-title">面试简单算法.md</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Java算法
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java%E7%AE%97%E6%B3%95/" class="post-category">
+                                    Java算法
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2020/07/05/Android-Java%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%932020/">
                     <div class="card-image">
                         
@@ -670,9 +741,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -696,97 +767,20 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
                     <a href="/tags/Android/">
                         <span class="chip bg-color">Android</span>
                     </a>
                     
+                    <a href="/tags/2020/">
+                        <span class="chip bg-color">2020</span>
+                    </a>
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
                     <a href="/tags/%E9%9D%A2%E8%AF%95/">
                         <span class="chip bg-color">面试</span>
-                    </a>
-                    
-                    <a href="/tags/2020/">
-                        <span class="chip bg-color">2020</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/07/05/Android-MVVM_%E7%BB%84%E4%BB%B6%E5%8C%96%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B9%9E%E4%B8%90%E6%80%BB%E7%BB%93%E7%9B%AE%E5%BD%95/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Android-&gt;MVVM_组件化的一些乞丐总结(目录)">
-                        
-                        <span class="card-title">Android-&gt;MVVM_组件化的一些乞丐总结(目录)</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            简单总结下一路做这个乞丐版的组件化，androidX，jetpack，沉浸式、暗黑模式，自我学习实践刷新组件等过程中的一些记录。。。从上到下依次是遇到的一些问题的记录链接。。自我激励一把，喵喵喵, 供菜鸟参考，不喜勿喷，谢谢
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-05
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%9E%B6%E6%9E%84/" class="post-category">
-                                    架构
-                                </a>
-                            
-                            <a href="/categories/%E6%9E%B6%E6%9E%84/MVVM/" class="post-category">
-                                    MVVM
-                                </a>
-                            
-                            <a href="/categories/%E6%9E%B6%E6%9E%84/MVVM/Android/" class="post-category">
-                                    Android
-                                </a>
-                            
-                            <a href="/categories/%E6%9E%B6%E6%9E%84/MVVM/Android/%E8%87%AA%E5%AE%9A%E4%B9%89View/" class="post-category">
-                                    自定义View
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/2020/">
-                        <span class="chip bg-color">2020</span>
-                    </a>
-                    
-                    <a href="/tags/jetpack/">
-                        <span class="chip bg-color">jetpack</span>
-                    </a>
-                    
-                    <a href="/tags/AndroidX/">
-                        <span class="chip bg-color">AndroidX</span>
-                    </a>
-                    
-                    <a href="/tags/MVVM/">
-                        <span class="chip bg-color">MVVM</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6/">
-                        <span class="chip bg-color">自定义组件</span>
                     </a>
                     
                 </div>
