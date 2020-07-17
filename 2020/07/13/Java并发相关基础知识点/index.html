@@ -29,7 +29,11 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
+<<<<<<< HEAD
 <meta name="generator" content="Hexo 4.2.1"></head>
+=======
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+>>>>>>> 7f65ea9dc91abdd8bfab975f26b23ba0ff923cc2
 
 
 <body>
@@ -321,16 +325,119 @@
 
 
 
+<<<<<<< HEAD
 <main class="container content">
 
     
     <!-- 文章内容详情 -->
+=======
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+>>>>>>> 7f65ea9dc91abdd8bfab975f26b23ba0ff923cc2
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
             <div class="row tag-cate">
                 <div class="col s7">
                     
+<<<<<<< HEAD
                     <div class="article-tag">
                         
                             <a href="/tags/Java/">
@@ -346,10 +453,16 @@
                             </a>
                         
                     </div>
+=======
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+>>>>>>> 7f65ea9dc91abdd8bfab975f26b23ba0ff923cc2
                     
                 </div>
                 <div class="col s5 right-align">
                     
+<<<<<<< HEAD
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
@@ -363,6 +476,8 @@
                         
                     </div>
                     
+=======
+>>>>>>> 7f65ea9dc91abdd8bfab975f26b23ba0ff923cc2
                 </div>
             </div>
 
@@ -458,6 +573,7 @@
 <p>ThreadLocal内部实现，主要关注其set()和get()方法</p>
 <ul>
 <li><p>set()方法</p>
+<<<<<<< HEAD
 <pre><code class="java">public void set(T value){
   Thread t = Thread.getCurrentThread();
   ThreadLocalMap map = getMap(t);
@@ -507,11 +623,63 @@ private T setInitialValue() {
         createMap(t, value);
     return value;
 }
+=======
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">set</span><span class="token punctuation">(</span>T value<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  Thread t <span class="token operator">=</span> Thread<span class="token punctuation">.</span><span class="token function">getCurrentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  ThreadLocalMap map <span class="token operator">=</span> <span class="token function">getMap</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>map <span class="token operator">!=</span> null<span class="token punctuation">)</span>
+    map<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">else</span>
+    <span class="token function">createMap</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+ThreadLocalMap <span class="token function">getMap</span><span class="token punctuation">(</span>Thread t<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> t<span class="token punctuation">.</span>threadLocals<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">createMap</span><span class="token punctuation">(</span>Thread t<span class="token punctuation">,</span> T firstValue<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  t<span class="token punctuation">.</span>threadLocals <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ThreadLocalMap</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span>firstValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>ThreadLocal内部有一个实例变量：</p>
+<pre class=" language-java"><code class="language-java">ThreadLocal<span class="token punctuation">.</span>ThreadLocalMap threadLocals <span class="token operator">=</span> null</code></pre>
+</li>
+<li><p>get()方法</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> T <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//获取当前的Thread对象</span>
+    Thread t <span class="token operator">=</span> Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// getMap方法获取对应的ThreadLocalMap对象</span>
+    ThreadLocalMap map <span class="token operator">=</span> <span class="token function">getMap</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 判断map是否为空</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>map <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// 如果map不为空，则以当前的ThreadLocal为Key，获取到Entry对象，并从中取值返回</span>
+      ThreadLocalMap<span class="token punctuation">.</span>Entry e <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">getEntry</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>e <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token annotation punctuation">@SuppressWarnings</span><span class="token punctuation">(</span><span class="token string">"unchecked"</span><span class="token punctuation">)</span>
+        T result <span class="token operator">=</span> <span class="token punctuation">(</span>T<span class="token punctuation">)</span>e<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// 如果map为空，则调setInitialValue方法，</span>
+    <span class="token keyword">return</span> <span class="token function">setInitialValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">private</span> T <span class="token function">setInitialValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    T value <span class="token operator">=</span> <span class="token function">initialValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//返回空</span>
+    Thread t <span class="token operator">=</span> Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ThreadLocalMap map <span class="token operator">=</span> <span class="token function">getMap</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>map <span class="token operator">!=</span> null<span class="token punctuation">)</span>
+        map<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span>
+        <span class="token function">createMap</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> value<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+>>>>>>> 7f65ea9dc91abdd8bfab975f26b23ba0ff923cc2
 </code></pre>
 </li>
 <li><p>ThreadLocalMap的源码</p>
 <p><img src="https://i.loli.net/2020/07/13/hWoGgScsu6yCJ57.png" alt=""></p>
 <p>可以看到有个Entry内部静态类，它继承了WeakReference，总之它记录了两个信息，一个是ThreadLocal&lt;?&gt;类型，一个是Object类型的值。getEntry方法则是获取某个ThreadLocal对应的值，set方法就是更新或赋值相应的ThreadLocal对应的值。</p>
+<<<<<<< HEAD
 <pre><code class="java">private Entry getEntry(ThreadLocal&lt;?&gt; key){
   int i = key.threadLocalHashcode &amp; (table.length - 1);
   Entry e = table[i];
@@ -521,6 +689,17 @@ private T setInitialValue() {
 private void set(ThreadLocal&lt;?&gt; key, Object value){
   ........
 }</code></pre>
+=======
+<pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> Entry <span class="token function">getEntry</span><span class="token punctuation">(</span>ThreadLocal<span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">></span> key<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">int</span> i <span class="token operator">=</span> key<span class="token punctuation">.</span>threadLocalHashcode <span class="token operator">&amp;</span> <span class="token punctuation">(</span>table<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  Entry e <span class="token operator">=</span> table<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">set</span><span class="token punctuation">(</span>ThreadLocal<span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">></span> key<span class="token punctuation">,</span> Object value<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span></code></pre>
+>>>>>>> 7f65ea9dc91abdd8bfab975f26b23ba0ff923cc2
 <p>回顾我们的get方法，其实就是拿到<strong>每个线程独有的ThreadLocalMap</strong></p>
 <p>然后再用ThreadLocal的当前实例，拿到Map中的相应的Entry，然后就可以拿到相应的值返回出去。当然，如果Map为空，还会先进行map的创建，初始化等工作。</p>
 </li>
@@ -600,6 +779,7 @@ private void set(ThreadLocal&lt;?&gt; key, Object value){
 <li><p>ScheduledThreadPoolExecutor是一个实现类，可以在给定的延迟后运行命令，或者定期执行命令。ScheduledThreadPoolExecutor比Timer更灵活，功能更强大。</p>
 </li>
 </ul>
+<<<<<<< HEAD
 <h4 id="2-线程池创建各个参数的含义"><a href="#2-线程池创建各个参数的含义" class="headerlink" title="2.线程池创建各个参数的含义"></a>2.线程池创建各个参数的含义</h4><pre><code class="java">public ThreadPoolExecutor(
   int corePoolSize,        //核心线程数
   int maximumPoolSize,    //最大线程数
@@ -609,6 +789,17 @@ private void set(ThreadLocal&lt;?&gt; key, Object value){
   ThreadFactory threadFactory,    //线程工厂
   RejectedExecutionHandler handler    //拒绝策略
 )</code></pre>
+=======
+<h4 id="2-线程池创建各个参数的含义"><a href="#2-线程池创建各个参数的含义" class="headerlink" title="2.线程池创建各个参数的含义"></a>2.线程池创建各个参数的含义</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token function">ThreadPoolExecutor</span><span class="token punctuation">(</span>
+  <span class="token keyword">int</span> corePoolSize<span class="token punctuation">,</span>        <span class="token comment" spellcheck="true">//核心线程数</span>
+  <span class="token keyword">int</span> maximumPoolSize<span class="token punctuation">,</span>    <span class="token comment" spellcheck="true">//最大线程数</span>
+  <span class="token keyword">long</span> keepAliveTime<span class="token punctuation">,</span>    <span class="token comment" spellcheck="true">//线程存活时间</span>
+  TimeUnit unit<span class="token punctuation">,</span>        <span class="token comment" spellcheck="true">//线程存活时间单位</span>
+  BlockingQueue<span class="token operator">&lt;</span>Runnable<span class="token operator">></span> workQueue<span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">//阻塞队列</span>
+  ThreadFactory threadFactory<span class="token punctuation">,</span>    <span class="token comment" spellcheck="true">//线程工厂</span>
+  RejectedExecutionHandler handler    <span class="token comment" spellcheck="true">//拒绝策略</span>
+<span class="token punctuation">)</span></code></pre>
+>>>>>>> 7f65ea9dc91abdd8bfab975f26b23ba0ff923cc2
 <h5 id="1）corePoolSize"><a href="#1）corePoolSize" class="headerlink" title="1）corePoolSize"></a>1）corePoolSize</h5><p>线程中的核心线程数，当提交一个任务时，线程池创建一个新线程执行任务，直到当前线程数等于corePoolSize;</p>
 <p>如果当前线程数为corePoolSize，继续提交的任务会被保存在阻塞队列中，等待被执行；</p>
 <p>如果执行了线程池的prestartAllCoreThreads()方法，线程池会提前创建并启动所有的核心线程。</p>
@@ -657,7 +848,29 @@ private void set(ThreadLocal&lt;?&gt; key, Object value){
 <p>执行时间不同的任务可以交给不同规模的线程池来处理，或者可以使用优先级队列，让执行时间短的任务先执行。</p>
 <p>建议使用有界队列。有界队列能增加系统的稳定性和预警能力，可以根据需要设大一点儿，比如几千。</p>
 <p>如果当时我们设置成无界队列，那么线程池的队列就会越来越多，有可能会撑满内存，导致整个系统不可用，而不只是后台任务出现问题。</p>
+<<<<<<< HEAD
 
+=======
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+>>>>>>> 7f65ea9dc91abdd8bfab975f26b23ba0ff923cc2
             </div>
             <hr/>
 
@@ -672,7 +885,11 @@ private void set(ThreadLocal&lt;?&gt; key, Object value){
                     </i>
                 </span>
                 <span class="reprint-info">
+<<<<<<< HEAD
                     <a href="/about" rel="external nofollow noreferrer">Alvis</a>
+=======
+                    <a href="/about" rel="external nofollow noreferrer">Chuan Po Xie</a>
+>>>>>>> 7f65ea9dc91abdd8bfab975f26b23ba0ff923cc2
                 </span>
             </div>
             <div class="reprint__type">
@@ -695,7 +912,11 @@ private void set(ThreadLocal&lt;?&gt; key, Object value){
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
+<<<<<<< HEAD
                     <a href="/about" target="_blank">Alvis</a>
+=======
+                    <a href="/about" target="_blank">Chuan Po Xie</a>
+>>>>>>> 7f65ea9dc91abdd8bfab975f26b23ba0ff923cc2
                     !
                 </span>
             </div>
@@ -719,6 +940,7 @@ private void set(ThreadLocal&lt;?&gt; key, Object value){
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
+<<<<<<< HEAD
                             
                                 <a href="/tags/Java/">
                                     <span class="chip bg-color">Java</span>
@@ -732,6 +954,9 @@ private void set(ThreadLocal&lt;?&gt; key, Object value){
                                     <span class="chip bg-color">多线程</span>
                                 </a>
                             
+=======
+                            <span class="chip bg-color">无标签</span>
+>>>>>>> 7f65ea9dc91abdd8bfab975f26b23ba0ff923cc2
                         </div>
                     
                 </div>
@@ -914,7 +1139,19 @@ private void set(ThreadLocal&lt;?&gt; key, Object value){
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
+<<<<<<< HEAD
                             JAVA并发
+=======
+                            Java并发相关概念整理启动线程自动线程的方式只有两种：
+
+继承自Thread,然后调用start()方法
+实现Runable接口，然后交给Thread运行
+
+
+线程的状态Java中的线程分为6种状态：
+
+初始状态(NEW)：新创建了一个线
+>>>>>>> 7f65ea9dc91abdd8bfab975f26b23ba0ff923cc2
                         
                     </div>
                     <div class="publish-info">
@@ -923,6 +1160,7 @@ private void set(ThreadLocal&lt;?&gt; key, Object value){
                             </span>
                         <span class="publish-author">
                             
+<<<<<<< HEAD
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
                             <a href="/categories/Java/" class="post-category">
@@ -933,12 +1171,17 @@ private void set(ThreadLocal&lt;?&gt; key, Object value){
                                     并发
                                 </a>
                             
+=======
+                            <i class="fas fa-user fa-fw"></i>
+                            Chuan Po Xie
+>>>>>>> 7f65ea9dc91abdd8bfab975f26b23ba0ff923cc2
                             
                         </span>
                     </div>
                 </div>
 
                 
+<<<<<<< HEAD
                 <div class="card-action article-tags">
                     
                     <a href="/tags/Java/">
@@ -955,6 +1198,8 @@ private void set(ThreadLocal&lt;?&gt; key, Object value){
                     
                 </div>
                 
+=======
+>>>>>>> 7f65ea9dc91abdd8bfab975f26b23ba0ff923cc2
             </div>
         </div>
         
@@ -1058,6 +1303,103 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </style>
 
 
+<<<<<<< HEAD
+=======
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+>>>>>>> 7f65ea9dc91abdd8bfab975f26b23ba0ff923cc2
     
 
 </main>

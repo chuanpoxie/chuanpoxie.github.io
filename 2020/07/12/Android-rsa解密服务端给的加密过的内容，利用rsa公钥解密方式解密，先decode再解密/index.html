@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -403,11 +403,11 @@ public class RsaDataUtil {
             byte[] bytes = RSAUtil.decryptWithPublicKeyBlock(
                     Base64Util.decodeToBytes(originStr),
                     CryptorNatvie.getPubliscKey(MyApplication.getInstance())/*GlobalAppInfo.public_key*/);
-            return new String(bytes, &quot;UTF-8&quot;);
+            return new String(bytes, "UTF-8");
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return &quot;&quot;;
+        return "";
     }
 }</code></pre><p><a href="http://rsautil.java/" target="_blank" rel="noopener">RSAUtil.java</a>  - 具体的Rsa加密解密方式，我这里重点关注decryptWithPublicKeyBlock</p>
 <pre><code>import java.io.BufferedReader;
@@ -442,8 +442,8 @@ public class RSAUtil {
      * 某些时候，后台(目前php后台)给的公钥并不支持RSA/ECB/PKCS1Padding算法，所以我们只需要RSA算法来通过公钥获取解密的key
      * 因此：分开两个变量使用
      */
-    private static String ECB_PADDING = &quot;RSA/ECB/PKCS1Padding&quot;;
-    private static String RSA = &quot;RSA&quot;;
+    private static String ECB_PADDING = "RSA/ECB/PKCS1Padding";
+    private static String RSA = "RSA";
 
     /**
      * RSA算法规定：待加密的字节数不能超过密钥的长度值除以8再减去11。
@@ -619,7 +619,7 @@ public class RSAUtil {
     public static byte[] encryptDataPrivate(byte[] data, PrivateKey privateKey) {
         try {
             // 对数据加密
-            Cipher cipher = Cipher.getInstance(&quot;RSA/ECB/PKCS1Padding&quot;);
+            Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
             cipher.init(Cipher.ENCRYPT_MODE, privateKey);
 
             return cipher.doFinal(data);
@@ -663,7 +663,7 @@ public class RSAUtil {
     public static byte[] decryptDataPrivate(byte[] data, PrivateKey privateKey) {
         try {
             // 对数据解密
-            Cipher cipher = Cipher.getInstance(&quot;RSA/ECB/PKCS1Padding&quot;);
+            Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
             cipher.init(Cipher.DECRYPT_MODE, privateKey);
             return cipher.doFinal(data);
         } catch (Exception e) {
@@ -785,11 +785,11 @@ public class RSAUtil {
             X509EncodedKeySpec keySpec = new X509EncodedKeySpec(buffer);
             return keyFactory.generatePublic(keySpec);
         } catch (NoSuchAlgorithmException e) {
-            throw new Exception(&quot;无此算法&quot;);
+            throw new Exception("无此算法");
         } catch (InvalidKeySpecException e) {
-            throw new Exception(&quot;公钥非法&quot;);
+            throw new Exception("公钥非法");
         } catch (NullPointerException e) {
-            throw new Exception(&quot;公钥数据为空&quot;);
+            throw new Exception("公钥数据为空");
         }
     }
 
@@ -808,11 +808,11 @@ public class RSAUtil {
             KeyFactory keyFactory = KeyFactory.getInstance(RSA);
             return keyFactory.generatePrivate(keySpec);
         } catch (NoSuchAlgorithmException e) {
-            throw new Exception(&quot;无此算法&quot;);
+            throw new Exception("无此算法");
         } catch (InvalidKeySpecException e) {
-            throw new Exception(&quot;私钥非法&quot;);
+            throw new Exception("私钥非法");
         } catch (NullPointerException e) {
-            throw new Exception(&quot;私钥数据为空&quot;);
+            throw new Exception("私钥数据为空");
         }
     }
 
@@ -827,9 +827,9 @@ public class RSAUtil {
         try {
             return loadPublicKey(readKey(in));
         } catch (IOException e) {
-            throw new Exception(&quot;公钥数据流读取错误&quot;);
+            throw new Exception("公钥数据流读取错误");
         } catch (NullPointerException e) {
-            throw new Exception(&quot;公钥输入流为空&quot;);
+            throw new Exception("公钥输入流为空");
         }
     }
 
@@ -844,9 +844,9 @@ public class RSAUtil {
         try {
             return loadPrivateKey(readKey(in));
         } catch (IOException e) {
-            throw new Exception(&quot;私钥数据读取错误&quot;);
+            throw new Exception("私钥数据读取错误");
         } catch (NullPointerException e) {
-            throw new Exception(&quot;私钥输入流为空&quot;);
+            throw new Exception("私钥输入流为空");
         }
     }
 
@@ -862,11 +862,11 @@ public class RSAUtil {
         String readLine = null;
         StringBuilder sb = new StringBuilder();
         while ((readLine = br.readLine()) != null) {
-            if (readLine.charAt(0) == &#39;-&#39;) {
+            if (readLine.charAt(0) == '-') {
                 continue;
             } else {
                 sb.append(readLine);
-                sb.append(&#39;\r&#39;);
+                sb.append('\r');
             }
         }
 
@@ -881,11 +881,11 @@ public class RSAUtil {
      */
     public static void printPublicKeyInfo(PublicKey publicKey) {
         RSAPublicKey rsaPublicKey = (RSAPublicKey) publicKey;
-        System.out.println(&quot;----------RSAPublicKey----------&quot;);
-        System.out.println(&quot;Modulus.length=&quot; + rsaPublicKey.getModulus().bitLength());
-        System.out.println(&quot;Modulus=&quot; + rsaPublicKey.getModulus().toString());
-        System.out.println(&quot;PublicExponent.length=&quot; + rsaPublicKey.getPublicExponent().bitLength());
-        System.out.println(&quot;PublicExponent=&quot; + rsaPublicKey.getPublicExponent().toString());
+        System.out.println("----------RSAPublicKey----------");
+        System.out.println("Modulus.length=" + rsaPublicKey.getModulus().bitLength());
+        System.out.println("Modulus=" + rsaPublicKey.getModulus().toString());
+        System.out.println("PublicExponent.length=" + rsaPublicKey.getPublicExponent().bitLength());
+        System.out.println("PublicExponent=" + rsaPublicKey.getPublicExponent().toString());
     }
 
     /**
@@ -895,11 +895,11 @@ public class RSAUtil {
      */
     public static void printPrivateKeyInfo(PrivateKey privateKey) {
         RSAPrivateKey rsaPrivateKey = (RSAPrivateKey) privateKey;
-        System.out.println(&quot;----------RSAPrivateKey ----------&quot;);
-        System.out.println(&quot;Modulus.length=&quot; + rsaPrivateKey.getModulus().bitLength());
-        System.out.println(&quot;Modulus=&quot; + rsaPrivateKey.getModulus().toString());
-        System.out.println(&quot;PrivateExponent.length=&quot; + rsaPrivateKey.getPrivateExponent().bitLength());
-        System.out.println(&quot;PrivatecExponent=&quot; + rsaPrivateKey.getPrivateExponent().toString());
+        System.out.println("----------RSAPrivateKey ----------");
+        System.out.println("Modulus.length=" + rsaPrivateKey.getModulus().bitLength());
+        System.out.println("Modulus=" + rsaPrivateKey.getModulus().toString());
+        System.out.println("PrivateExponent.length=" + rsaPrivateKey.getPrivateExponent().bitLength());
+        System.out.println("PrivatecExponent=" + rsaPrivateKey.getPrivateExponent().toString());
 
     }
 
@@ -938,7 +938,7 @@ public class RSAUtil {
      * @throws
      */
     public static String hexString2String(String src) {
-        String temp = &quot;&quot;;
+        String temp = "";
         for (int i = 0; i &lt; src.length() / 2; i++) {
             temp = temp
                     + (char) Integer.valueOf(src.substring(i * 2, i * 2 + 2),
@@ -977,7 +977,7 @@ public class RSAUtil {
         for (int i = 0; i &lt; b.length; i++) {
             hex = Integer.toHexString(b[i] &amp; 0xFF);
             if (hex.length() == 1) {
-                hex = &#39;0&#39; + hex;
+                hex = '0' + hex;
             }
             result.append(hex.toUpperCase());
         }
@@ -992,10 +992,10 @@ public class Base64Util {
 
     /******************************************非官方**************************************/
     private static char[] base64EncodeChars = new char[]
-            {&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;, &#39;L&#39;, &#39;M&#39;, &#39;N&#39;, &#39;O&#39;, &#39;P&#39;, &#39;Q&#39;, &#39;R&#39;, &#39;S&#39;, &#39;T&#39;,
-                    &#39;U&#39;, &#39;V&#39;, &#39;W&#39;, &#39;X&#39;, &#39;Y&#39;, &#39;Z&#39;, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;, &#39;h&#39;, &#39;i&#39;, &#39;j&#39;, &#39;k&#39;, &#39;l&#39;, &#39;m&#39;,
-                    &#39;n&#39;, &#39;o&#39;, &#39;p&#39;, &#39;q&#39;, &#39;r&#39;, &#39;s&#39;, &#39;t&#39;, &#39;u&#39;, &#39;v&#39;, &#39;w&#39;, &#39;x&#39;, &#39;y&#39;, &#39;z&#39;, &#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;,
-                    &#39;6&#39;, &#39;7&#39;, &#39;8&#39;, &#39;9&#39;, &#39;+&#39;, &#39;/&#39;};
+            {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+                    'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+                    'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5',
+                    '6', '7', '8', '9', '+', '/'};
 
     private static byte[] base64DecodeChars = new byte[]
             {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
@@ -1032,7 +1032,7 @@ public class Base64Util {
 
     private static byte[] decodePrivate(String str) throws UnsupportedEncodingException {
         StringBuffer sb = new StringBuffer();
-        byte[] data = str.getBytes(&quot;US-ASCII&quot;);
+        byte[] data = str.getBytes("US-ASCII");
         int len = data.length;
         int i = 0;
         int b1, b2, b3, b4;
@@ -1054,7 +1054,7 @@ public class Base64Util {
             do {
                 b3 = data[i++];
                 if (b3 == 61)
-                    return sb.toString().getBytes(&quot;iso8859-1&quot;);
+                    return sb.toString().getBytes("iso8859-1");
                 b3 = base64DecodeChars[b3];
             } while (i &lt; len &amp;&amp; b3 == -1);
             if (b3 == -1)
@@ -1064,7 +1064,7 @@ public class Base64Util {
             do {
                 b4 = data[i++];
                 if (b4 == 61)
-                    return sb.toString().getBytes(&quot;iso8859-1&quot;);
+                    return sb.toString().getBytes("iso8859-1");
                 b4 = base64DecodeChars[b4];
             } while (i &lt; len &amp;&amp; b4 == -1);
             if (b4 == -1)
@@ -1072,7 +1072,7 @@ public class Base64Util {
             sb.append((char) (((b3 &amp; 0x03) &lt;&lt; 6) | b4));
         }
 
-        return sb.toString().getBytes(&quot;iso8859-1&quot;);
+        return sb.toString().getBytes("iso8859-1");
     }
 
     private static String decodePublic(byte[] data) {
@@ -1086,7 +1086,7 @@ public class Base64Util {
             if (i == len) {
                 sb.append(base64EncodeChars[b1 &gt;&gt;&gt; 2]);
                 sb.append(base64EncodeChars[(b1 &amp; 0x3) &lt;&lt; 4]);
-                sb.append(&quot;==&quot;);
+                sb.append("==");
                 break;
             }
             b2 = data[i++] &amp; 0xff;
@@ -1094,7 +1094,7 @@ public class Base64Util {
                 sb.append(base64EncodeChars[b1 &gt;&gt;&gt; 2]);
                 sb.append(base64EncodeChars[((b1 &amp; 0x03) &lt;&lt; 4) | ((b2 &amp; 0xf0) &gt;&gt;&gt; 4)]);
                 sb.append(base64EncodeChars[(b2 &amp; 0x0f) &lt;&lt; 2]);
-                sb.append(&quot;=&quot;);
+                sb.append("=");
                 break;
             }
             b3 = data[i++] &amp; 0xff;
@@ -1114,7 +1114,7 @@ public class Base64Util {
      */
     public static byte[] decodeToBytes(String str){
         //        try {
-        //            return Base64.decode(str.getBytes(&quot;utf-8&quot;), Base64.DEFAULT);
+        //            return Base64.decode(str.getBytes("utf-8"), Base64.DEFAULT);
         //        } catch (UnsupportedEncodingException e) {
         //            e.printStackTrace();
         //        }
@@ -1139,10 +1139,10 @@ java.security.spec.InvalidKeySpecException: encoded key spec not recognized: fai
 <pre><code>#include &lt;jni.h&gt;
 #include &lt;string&gt;
 
-const char *app_signature_sha1=&quot;E561477307CDxxxxxxxx815EC4A014DF&quot;;
-const char HexCode[]={&#39;0&#39;,&#39;1&#39;,&#39;2&#39;,&#39;3&#39;,&#39;4&#39;,&#39;5&#39;,&#39;6&#39;,&#39;7&#39;,&#39;8&#39;,&#39;9&#39;,&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;,&#39;E&#39;,&#39;F&#39;};
+const char *app_signature_sha1="E561477307CDxxxxxxxx815EC4A014DF";
+const char HexCode[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
 
-extern &quot;C&quot; JNIEXPORT jstring JNICALL
+extern "C" JNIEXPORT jstring JNICALL
 Java_com_lieyun_rsa_CryptorNatvie_getPubliscKey(
         JNIEnv* env,
         jclass type,
@@ -1150,18 +1150,18 @@ Java_com_lieyun_rsa_CryptorNatvie_getPubliscKey(
     jclass context_class = env-&gt;GetObjectClass(context_object);
 
     //context.getPackageManager()
-    jmethodID methodId = env-&gt;GetMethodID(context_class, &quot;getPackageManager&quot;, &quot;()Landroid/content/pm/PackageManager;&quot;);
+    jmethodID methodId = env-&gt;GetMethodID(context_class, "getPackageManager", "()Landroid/content/pm/PackageManager;");
     jobject package_manager_object = env-&gt;CallObjectMethod(context_object, methodId);
     if (package_manager_object == NULL) {
-        std::string rsa_keysbhello = &quot;hello&quot;;
+        std::string rsa_keysbhello = "hello";
         return env-&gt;NewStringUTF(rsa_keysbhello.c_str());
     }
 
     //context.getPackageName()
-    methodId = env-&gt;GetMethodID(context_class, &quot;getPackageName&quot;, &quot;()Ljava/lang/String;&quot;);
+    methodId = env-&gt;GetMethodID(context_class, "getPackageName", "()Ljava/lang/String;");
     jstring package_name_string = (jstring)env-&gt;CallObjectMethod(context_object, methodId);
     if (package_name_string == NULL) {
-        std::string rsa_keysbheys = &quot;heys&quot;;
+        std::string rsa_keysbheys = "heys";
         return env-&gt;NewStringUTF(rsa_keysbheys.c_str());
     }
     env-&gt;DeleteLocalRef(context_class);
@@ -1169,22 +1169,22 @@ Java_com_lieyun_rsa_CryptorNatvie_getPubliscKey(
     //PackageManager.getPackageInfo(Sting, int)
     //public static final int GET_SIGNATURES= 0x00000040;
     jclass pack_manager_class = env-&gt;GetObjectClass(package_manager_object);
-    methodId = env-&gt;GetMethodID(pack_manager_class, &quot;getPackageInfo&quot;, &quot;(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;&quot;);
+    methodId = env-&gt;GetMethodID(pack_manager_class, "getPackageInfo", "(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;");
     env-&gt;DeleteLocalRef(pack_manager_class);
     jobject package_info_object = env-&gt;CallObjectMethod(package_manager_object, methodId, package_name_string, 0x40);
     if (package_info_object == NULL) {
-        std::string rsa_keysbhey = &quot;hey&quot;;
+        std::string rsa_keysbhey = "hey";
         return env-&gt;NewStringUTF(rsa_keysbhey.c_str());
     }
     env-&gt;DeleteLocalRef(package_manager_object);
 
     //PackageInfo.signatures[0]
     jclass package_info_class = env-&gt;GetObjectClass(package_info_object);
-    jfieldID fieldId = env-&gt;GetFieldID(package_info_class, &quot;signatures&quot;, &quot;[Landroid/content/pm/Signature;&quot;);
+    jfieldID fieldId = env-&gt;GetFieldID(package_info_class, "signatures", "[Landroid/content/pm/Signature;");
     env-&gt;DeleteLocalRef(package_info_class);
     jobjectArray signature_object_array = (jobjectArray)env-&gt;GetObjectField(package_info_object, fieldId);
     if (signature_object_array == NULL) {
-        std::string rsa_keysbfuck = &quot;fuck&quot;;
+        std::string rsa_keysbfuck = "fuck";
         return env-&gt;NewStringUTF(rsa_keysbfuck.c_str());
     }
     jobject signature_object = env-&gt;GetObjectArrayElement(signature_object_array, 0);
@@ -1192,40 +1192,40 @@ Java_com_lieyun_rsa_CryptorNatvie_getPubliscKey(
 
     //Signature.toByteArray()
     jclass signature_class = env-&gt;GetObjectClass(signature_object);
-    methodId = env-&gt;GetMethodID(signature_class, &quot;toByteArray&quot;, &quot;()[B&quot;);
+    methodId = env-&gt;GetMethodID(signature_class, "toByteArray", "()[B");
     env-&gt;DeleteLocalRef(signature_class);
     jbyteArray signature_byte = (jbyteArray) env-&gt;CallObjectMethod(signature_object, methodId);
 
     //new ByteArrayInputStream - 这里报错了，但是不影响打包和运行
-    jclass byte_array_input_class=env-&gt;FindClass(&quot;java/io/ByteArrayInputStream&quot;);
-    methodId=env-&gt;GetMethodID(byte_array_input_class,&quot;&lt;init&gt;&quot;,&quot;([B)V&quot;);
+    jclass byte_array_input_class=env-&gt;FindClass("java/io/ByteArrayInputStream");
+    methodId=env-&gt;GetMethodID(byte_array_input_class,"&lt;init&gt;","([B)V");
     jobject byte_array_input=env-&gt;NewObject(byte_array_input_class,methodId,signature_byte);
 
-    //CertificateFactory.getInstance(&quot;X.509&quot;)
-    jclass certificate_factory_class=env-&gt;FindClass(&quot;java/security/cert/CertificateFactory&quot;);
-    methodId=env-&gt;GetStaticMethodID(certificate_factory_class,&quot;getInstance&quot;,&quot;(Ljava/lang/String;)Ljava/security/cert/CertificateFactory;&quot;);
-    jstring x_509_jstring=env-&gt;NewStringUTF(&quot;X.509&quot;);
+    //CertificateFactory.getInstance("X.509")
+    jclass certificate_factory_class=env-&gt;FindClass("java/security/cert/CertificateFactory");
+    methodId=env-&gt;GetStaticMethodID(certificate_factory_class,"getInstance","(Ljava/lang/String;)Ljava/security/cert/CertificateFactory;");
+    jstring x_509_jstring=env-&gt;NewStringUTF("X.509");
     jobject cert_factory=env-&gt;CallStaticObjectMethod(certificate_factory_class,methodId,x_509_jstring);
 
     //certFactory.generateCertificate(byteIn);
-    methodId=env-&gt;GetMethodID(certificate_factory_class,&quot;generateCertificate&quot;,(&quot;(Ljava/io/InputStream;)Ljava/security/cert/Certificate;&quot;));
+    methodId=env-&gt;GetMethodID(certificate_factory_class,"generateCertificate",("(Ljava/io/InputStream;)Ljava/security/cert/Certificate;"));
     jobject x509_cert=env-&gt;CallObjectMethod(cert_factory,methodId,byte_array_input);
     env-&gt;DeleteLocalRef(certificate_factory_class);
 
     //cert.getEncoded()
     jclass x509_cert_class=env-&gt;GetObjectClass(x509_cert);
-    methodId=env-&gt;GetMethodID(x509_cert_class,&quot;getEncoded&quot;,&quot;()[B&quot;);
+    methodId=env-&gt;GetMethodID(x509_cert_class,"getEncoded","()[B");
     jbyteArray cert_byte=(jbyteArray)env-&gt;CallObjectMethod(x509_cert,methodId);
     env-&gt;DeleteLocalRef(x509_cert_class);
 
-    //MessageDigest.getInstance(&quot;SHA1&quot;)
-    jclass message_digest_class=env-&gt;FindClass(&quot;java/security/MessageDigest&quot;);
-    methodId=env-&gt;GetStaticMethodID(message_digest_class,&quot;getInstance&quot;,&quot;(Ljava/lang/String;)Ljava/security/MessageDigest;&quot;);
-    jstring sha1_jstring=env-&gt;NewStringUTF(&quot;SHA1&quot;);
+    //MessageDigest.getInstance("SHA1")
+    jclass message_digest_class=env-&gt;FindClass("java/security/MessageDigest");
+    methodId=env-&gt;GetStaticMethodID(message_digest_class,"getInstance","(Ljava/lang/String;)Ljava/security/MessageDigest;");
+    jstring sha1_jstring=env-&gt;NewStringUTF("SHA1");
     jobject sha1_digest=env-&gt;CallStaticObjectMethod(message_digest_class,methodId,sha1_jstring);
 
     //sha1.digest (certByte)
-    methodId=env-&gt;GetMethodID(message_digest_class,&quot;digest&quot;,&quot;([B)[B&quot;);
+    methodId=env-&gt;GetMethodID(message_digest_class,"digest","([B)[B");
     jbyteArray sha1_byte=(jbyteArray)env-&gt;CallObjectMethod(sha1_digest,methodId,cert_byte);
     env-&gt;DeleteLocalRef(message_digest_class);
 
@@ -1237,24 +1237,24 @@ Java_com_lieyun_rsa_CryptorNatvie_getPubliscKey(
         hex_sha[2*i]=HexCode[((unsigned char)sha1[i])/16];
         hex_sha[2*i+1]=HexCode[((unsigned char)sha1[i])%16];
     }
-    hex_sha[array_size*2]=&#39;\0&#39;;
+    hex_sha[array_size*2]='\0';
     //比较签名
     if (strcmp(hex_sha,app_signature_sha1)==0)
     {
-        std::string rsa_key = &quot;MIIBIjxxxxxxxB\n&quot;;
+        std::string rsa_key = "MIIBIjxxxxxxxB\n";
         return env-&gt;NewStringUTF(rsa_key.c_str());
     } else{
-        std::string rsa_keysb = &quot;sb&quot;;
+        std::string rsa_keysb = "sb";
         return env-&gt;NewStringUTF(rsa_keysb.c_str());
     }
 }
 
 //jobject getApplication(JNIEnv *env) {
-//    jclass localClass = (*env)-&gt;FindClass(env,&quot;android/app/ActivityThread&quot;);
+//    jclass localClass = (*env)-&gt;FindClass(env,"android/app/ActivityThread");
 //    if (localClass!=NULL)
 //    {
-//        // LOGI(&quot;class have find&quot;);
-//        jmethodID getapplication = (*env)-&gt;GetStaticMethodID(env,localClass, &quot;currentApplication&quot;, &quot;()Landroid/app/Application;&quot;);
+//        // LOGI("class have find");
+//        jmethodID getapplication = (*env)-&gt;GetStaticMethodID(env,localClass, "currentApplication", "()Landroid/app/Application;");
 //        if (getapplication!=NULL)
 //        {
 //            jobject application = (*env)-&gt;CallStaticObjectMethod(env,localClass, getapplication);
@@ -1269,8 +1269,8 @@ Java_com_lieyun_rsa_CryptorNatvie_getPubliscKey(
 //    jclass temp_clazz = NULL;
 //    jmethodID mid_static_method;
 //    // 1、从classpath路径下搜索ClassMethod这个类，并返回该类的Class对象
-//    temp_clazz =(*env)-&gt;FindClass(env,&quot;java/lang/System&quot;);
-//    mid_static_method = (*env)-&gt;GetStaticMethodID(env,temp_clazz,&quot;exit&quot;,&quot;(I)V&quot;);
+//    temp_clazz =(*env)-&gt;FindClass(env,"java/lang/System");
+//    mid_static_method = (*env)-&gt;GetStaticMethodID(env,temp_clazz,"exit","(I)V");
 //    (*env)-&gt;CallStaticVoidMethod(env,temp_clazz,mid_static_method,flag);
 //    (*env)-&gt;DeleteLocalRef(env,temp_clazz);
 //}</code></pre><p><img src="https://pic3.zhimg.com/v2-cb671f4b8eb2f4ca168bfe673850cb76_b.png" alt="img"></p>
@@ -1278,7 +1278,25 @@ Java_com_lieyun_rsa_CryptorNatvie_getPubliscKey(
 <p><img src="https://pic1.zhimg.com/v2-5c784bf030867f88006efeba0c261fe0_b.png" alt="img"></p>
 <p>上面这是rsa公钥字符串（处理了begin和end。。\n保留了。如果有问题可以再多调试）</p>
 <p> 到此基本就搞定了rsa界面，然后做了基本的so加密处理 <a href="https://zhuanlan.zhihu.com/p/101999563。。。顺便复习了下native编程。。哇咔咔。。。加油。。" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/101999563。。。顺便复习了下native编程。。哇咔咔。。。加油。。</a></p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 

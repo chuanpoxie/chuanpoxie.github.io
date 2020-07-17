@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -406,7 +406,25 @@
 <p>问题：</p>
 <p><a href="https://zhuanlan.zhihu.com/p/102713335" target="_blank" rel="noopener">MonkeyLei：Android-约束布局-ConstraintLayout goneMarginTop还不错</a></p>
 <p>其他的有问题继续补充…另外如果遇到一些复杂布局出现问题，可以回过头去琢磨一些属性，相信应该都可以解决哒！目前已经三个项目都是约束，对尽量做到适配，很有帮助，很nice的。。。特殊情况可能需要用的一些不常用的属性，but很有用哟</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 

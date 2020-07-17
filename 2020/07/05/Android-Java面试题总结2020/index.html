@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -432,10 +432,28 @@
 </ol>
 <p>过往项目中遇到的最难的问题（有实际印象深的可以描述，我描述了之前关于一个项目从Android3D迁移到U3D引擎的过程，以及为何这样做）<br>你最讨厌跟什么样的人交流（千万不要正面回答，要回答“交流协调是一个过程，有分歧很正常的，不存在什么讨厌不讨厌”，大概就是要阐述如何团队合作，如何协调工作）<br>你对加班怎么看（要表示出你并不反对加班，因为项目紧，赶工期，上线都是很正常的事情）<br>介绍下你最近项目，以及项目从开始到上线，是如何分配工作，安排（可以简单描述下产品原型-&gt;评审-&gt;最终原型-&gt;设计图-&gt;开发-&gt;测试-&gt;上线）<br>你们团队规模（可以稍微说的大一点，以及你对团队职责的了解，显得你不只是守着自己的一亩三分地）<br>可能会问你架构的演变，为什么这样演变（mvp到mvvm）<br>如何保证项目稳定性（可以往大量测试，网络，性能，内存等优化方向，如果实践过自动化测试，可以提及； 热修复实践过可以提及，之前文章有介绍过）<br>期望薪资，看个人情况<br>暂时回忆了这些，等想起其他的再补充</p>
 <p>Next，将完善新项目，届时会将很多自定义组件（进度条，banner，文本图片组合+角标，底部角标，官方Exoplayer视频界面，收货地址管理（仿某团，带高德地图点选相关界面，城市索引页面等），顶部角标Tab等独立原生自定义实现）也精简后更新工程，这个要等新项目完成后有时间搞！<a href="https://github.com/FanChael/MVVM" target="_blank">FanChael/MVVM</a> - 欢迎提前关注一波！</p>
-<img src="https://pic2.zhimg.com/80/v2-d1c0111ffa562e8bc2ce4a412b113945_1440w.jpg"/>
+<img src="https://pic2.zhimg.com/80/v2-d1c0111ffa562e8bc2ce4a412b113945_1440w.jpg">
 
 <p>希望菜鸟你我可以共勉，多源码，多算法，江湖再战！</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -727,6 +745,7 @@
                     
                     <a href="/tags/ConstraintLayout/">
                         <span class="chip bg-color">ConstraintLayout</span>
+<<<<<<< HEAD
                     </a>
                     
                     <a href="/tags/Android/">
@@ -737,6 +756,18 @@
                         <span class="chip bg-color">约束布局</span>
                     </a>
                     
+=======
+                    </a>
+                    
+                    <a href="/tags/Android/">
+                        <span class="chip bg-color">Android</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80/">
+                        <span class="chip bg-color">约束布局</span>
+                    </a>
+                    
+>>>>>>> 7f65ea9dc91abdd8bfab975f26b23ba0ff923cc2
                     <a href="/tags/2020/">
                         <span class="chip bg-color">2020</span>
                     </a>
